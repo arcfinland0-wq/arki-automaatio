@@ -14,7 +14,7 @@ Open `http://localhost:4173/` or the authenticated Devin browser preview for por
 
 ## GitHub Pages
 
-This dependency-free site also works at a GitHub Pages project URL: all asset references are relative. After the site PR is reviewed and merged, enable **Settings → Pages → Deploy from a branch → main / (root)**. `.nojekyll` disables Jekyll processing. No custom domain or paid hosting is needed. Publishing was approved by the owner; the contact form deliberately remains a draft-only placeholder.
+This dependency-free site also works at a GitHub Pages project URL: all asset references are relative. After the site PR is reviewed and merged, enable **Settings → Pages → Deploy from a branch → main / (root)**. `.nojekyll` disables Jekyll processing. The owner supplied the existing domain `ayraslabs.com`; `CNAME` preserves that custom domain. Set the apex A records to `185.199.108.153`, `185.199.109.153`, `185.199.110.153` and `185.199.111.153`, and `www` CNAME to `arcfinland0-wq.github.io`. Enforce HTTPS once GitHub issues the certificate. No domain purchase or paid hosting is needed. Publishing was approved by the owner; the contact form deliberately remains a draft-only placeholder.
 
 ## Contact form
 
