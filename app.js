@@ -32,9 +32,22 @@ const form = document.querySelector('#contact-form');
 const dialog = document.querySelector('#draft-dialog');
 const output = document.querySelector('#draft-output');
 const copyStatus = document.querySelector('#copy-status');
+const requiredTextFields = [form.elements.name, form.elements.message];
+
+function validateRequiredText(field) {
+  field.setCustomValidity(field.value && !field.value.trim()
+    ? 'Kirjoita tähän muutakin kuin välilyöntejä.'
+    : '');
+}
+
+requiredTextFields.forEach((field) => {
+  field.addEventListener('input', () => validateRequiredText(field));
+});
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
+  requiredTextFields.forEach(validateRequiredText);
+  if (!form.reportValidity()) return;
   const values = new FormData(form);
   output.value = [
     'Aihe: Keskustelu yrityksen automaatiosta',
