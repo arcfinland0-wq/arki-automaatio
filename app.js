@@ -65,3 +65,7 @@ document.querySelector('#copy-draft').addEventListener('click', async () => {
     copyStatus.textContent = 'Kopiointi ei onnistunut automaattisesti. Teksti on valittu: kopioi se laitteen kopiointitoiminnolla.';
   }
 });
+
+// Without the draft handler, keep all fields disabled so native form submission
+// cannot put contact details in a URL or send them to the static host.
+document.querySelector('#contact-fields').disabled = false;

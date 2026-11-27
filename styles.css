@@ -177,6 +177,7 @@ details > p { color: var(--text-muted); font-size: 12px; padding: 0 30px 22px 0;
 .contact-aside { display: flex; align-items: center; gap: 15px; margin-top: 45px; padding-top: 23px; border-top: 1px solid var(--border); max-width: 305px; font-size: 11px; color: var(--text-muted); }
 .contact-aside > span { color: var(--text); font-size: 27px; }
 .contact-form { min-width: 0; }
+.contact-form fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 .preview-notice { background: var(--soft); border-radius: 5px; padding: 14px 16px; color: var(--text-muted); font-size: 10px; line-height: 1.8; margin-bottom: 23px; }
 .preview-notice strong { font-weight: 500; color: var(--text); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }

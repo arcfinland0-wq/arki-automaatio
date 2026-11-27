@@ -86,7 +86,21 @@
     </div></div></section>
 
     <section class="section container contact-section" id="yhteys" aria-labelledby="contact-heading"><div class="contact-copy"><p class="eyebrow">04 / ALOITETAANKO TÄSTÄ?</p><h2 id="contact-heading">Mikä homma<br>toistuu teillä?</h2><p>Kerro lyhyesti, mitä teet nyt käsin ja millä ohjelmilla. Teknistä sanastoa ei tarvita.</p><div class="contact-aside"><span aria-hidden="true">↗</span><p>Pieni helsinkiläinen yritys?<br>Aloitetaan teidän arjestanne.</p></div></div>
-      <form id="contact-form" class="contact-form"><p class="preview-notice"><strong>Tämä on sivun esikatselu.</strong> Lomake tekee vain viestiluonnoksen. Viestiä ei lähetetä eikä tietoja tallenneta. Yhteysosoite lisätään ennen julkaisua.</p><div class="form-row"><div class="field"><label for="name">Nimi <span>(pakollinen)</span></label><input id="name" name="name" autocomplete="name" maxlength="120" required placeholder="Etunimi Sukunimi"></div><div class="field"><label for="company">Yritys <span>(vapaaehtoinen)</span></label><input id="company" name="company" autocomplete="organization" maxlength="160" placeholder="Yrityksen nimi"></div></div><div class="field"><label for="email">Sähköposti <span>(pakollinen)</span></label><input id="email" name="email" type="email" autocomplete="email" maxlength="200" required placeholder="sinä@yritys.fi"></div><div class="field"><label for="package">Mistä haluaisit jutella?</label><select id="package" name="package"><option>En vielä tiedä — mietitään yhdessä</option><option>Yksi automaatio · 490 €</option><option>Automaatiopaketti · 1 200–1 900 €</option><option>Ylläpito · 99–199 €/kk</option><option>Referenssitoteutus · 250 €</option></select></div><div class="field"><label for="message">Toistuva homma <span>(pakollinen)</span></label><textarea id="message" name="message" rows="4" maxlength="4000" required placeholder="Esim. kopioin joka perjantai viikon varaukset taulukkoon…"></textarea></div><p class="form-help">Älä lisää salasanoja tai asiakkaidesi henkilötietoja.</p><button class="button" type="submit">Esikatsele viestiluonnos <span aria-hidden="true">↗</span></button><noscript><p>Viestiluonnoksen esikatselu tarvitsee JavaScriptin. Tämä esikatselusivu ei lähetä viestejä.</p></noscript></form>
+      <form id="contact-form" class="contact-form">
+        <p class="preview-notice"><strong>Tämä on sivun esikatselu.</strong> Lomake tekee vain viestiluonnoksen. Viestiä ei lähetetä eikä tietoja tallenneta. Yhteysosoite lisätään ennen julkaisua.</p>
+        <fieldset id="contact-fields" disabled>
+          <div class="form-row">
+            <div class="field"><label for="name">Nimi <span>(pakollinen)</span></label><input id="name" name="name" autocomplete="name" maxlength="120" required placeholder="Etunimi Sukunimi"></div>
+            <div class="field"><label for="company">Yritys <span>(vapaaehtoinen)</span></label><input id="company" name="company" autocomplete="organization" maxlength="160" placeholder="Yrityksen nimi"></div>
+          </div>
+          <div class="field"><label for="email">Sähköposti <span>(pakollinen)</span></label><input id="email" name="email" type="email" autocomplete="email" maxlength="200" required placeholder="sinä@yritys.fi"></div>
+          <div class="field"><label for="package">Mistä haluaisit jutella?</label><select id="package" name="package"><option>En vielä tiedä — mietitään yhdessä</option><option>Yksi automaatio · 490 €</option><option>Automaatiopaketti · 1 200–1 900 €</option><option>Ylläpito · 99–199 €/kk</option><option>Referenssitoteutus · 250 €</option></select></div>
+          <div class="field"><label for="message">Toistuva homma <span>(pakollinen)</span></label><textarea id="message" name="message" rows="4" maxlength="4000" required placeholder="Esim. kopioin joka perjantai viikon varaukset taulukkoon…"></textarea></div>
+          <p class="form-help">Älä lisää salasanoja tai asiakkaidesi henkilötietoja.</p>
+          <button class="button" type="submit">Esikatsele viestiluonnos <span aria-hidden="true">↗</span></button>
+        </fieldset>
+        <noscript><p>Viestiluonnoksen esikatselu tarvitsee JavaScriptin. Tämä esikatselusivu ei lähetä viestejä.</p></noscript>
+      </form>
     </section>
   </main>
 
