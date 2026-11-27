@@ -1,6 +1,6 @@
 # Arki Automaatio — service landing page
 
-A Finnish one-page service website. “Arki Automaatio” is a working name, not an established company identity. Plain HTML, CSS and browser JavaScript; no dependencies, build step, external fonts, analytics or requests to third-party services.
+A bilingual service website: Finnish at `/` and English at `/en/`, with visible language links on desktop and mobile. Plain HTML, CSS and browser JavaScript; no dependencies, build step, external fonts, analytics or requests to third-party services.
 
 ## Run locally
 
@@ -18,7 +18,7 @@ This dependency-free site also works at a GitHub Pages project URL: all asset re
 
 ## Contact form
 
-The form validates required fields and an email address, then opens a local, copyable draft. It never sends a message or stores personal data. Package buttons preselect the matching topic. The preview notice is deliberately explicit: no real address has been supplied. The draft uses text values, not HTML injection. Clipboard denial falls back to selecting the draft for manual copying.
+The form validates required fields and an email address, then opens a local, copyable draft. It never sends a message or stores personal data. Package buttons preselect the matching topic. Visitors can copy the draft and send it themselves to the owner-provided `labs@ayraslabs.com`; direct `mailto:` links also work without JavaScript. The draft uses text values, not HTML injection. Clipboard denial falls back to selecting the draft for manual copying.
 
 ## Before accepting real enquiries
 
@@ -27,8 +27,9 @@ Confirm the business name and seller identity, provide the real contact destinat
 ## Contents
 
 - `index.html`: semantic Finnish content, prices, FAQ, contact draft dialog.
+- `en/index.html`: complete English page with the same prices and terms.
 - `styles.css`: responsive layout, focus states and reduced-motion support.
-- `app.js`: mobile navigation, package selection and contact draft preview/copy.
+- `app.js`: shared mobile navigation, package selection and contact draft preview/copy, localized from the document language.
 - `favicon.svg`: original working-name mark.
 
 Source pricing: supplied business plan and sales-message draft. Listed prices are VAT-exclusive; any applicable VAT and third-party costs are agreed in the quote. No hosting, domains, accounts or customer messages have been purchased or created.

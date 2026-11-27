@@ -33,10 +33,26 @@ const dialog = document.querySelector('#draft-dialog');
 const output = document.querySelector('#draft-output');
 const copyStatus = document.querySelector('#copy-status');
 const requiredTextFields = [form.elements.name, form.elements.message];
+const english = document.documentElement.lang === 'en';
+const messages = english ? {
+  whitespace: 'Please enter more than spaces.',
+  subject: 'Subject: Business automation enquiry',
+  name: 'Name', company: 'Company', email: 'Email', interest: 'Interested in',
+  unspecified: 'Not provided', task: 'The recurring task:',
+  copied: 'Draft copied. No message was sent.',
+  copyFailed: 'Could not copy automatically. The text is selected: use your device’s copy command.',
+} : {
+  whitespace: 'Kirjoita tähän muutakin kuin välilyöntejä.',
+  subject: 'Aihe: Keskustelu yrityksen automaatiosta',
+  name: 'Nimi', company: 'Yritys', email: 'Sähköposti', interest: 'Kiinnostaa',
+  unspecified: 'Ei ilmoitettu', task: 'Toistuva homma:',
+  copied: 'Luonnos kopioitu. Viestiä ei lähetetty.',
+  copyFailed: 'Kopiointi ei onnistunut automaattisesti. Teksti on valittu: kopioi se laitteen kopiointitoiminnolla.',
+};
 
 function validateRequiredText(field) {
   field.setCustomValidity(field.value && !field.value.trim()
-    ? 'Kirjoita tähän muutakin kuin välilyöntejä.'
+    ? messages.whitespace
     : '');
 }
 
@@ -50,14 +66,14 @@ form.addEventListener('submit', (event) => {
   if (!form.reportValidity()) return;
   const values = new FormData(form);
   output.value = [
-    'Aihe: Keskustelu yrityksen automaatiosta',
+    messages.subject,
     '',
-    `Nimi: ${values.get('name').trim()}`,
-    `Yritys: ${values.get('company').trim() || 'Ei ilmoitettu'}`,
-    `Sähköposti: ${values.get('email').trim()}`,
-    `Kiinnostaa: ${values.get('package')}`,
+    `${messages.name}: ${values.get('name').trim()}`,
+    `${messages.company}: ${values.get('company').trim() || messages.unspecified}`,
+    `${messages.email}: ${values.get('email').trim()}`,
+    `${messages.interest}: ${values.get('package')}`,
     '',
-    'Toistuva homma:',
+    messages.task,
     values.get('message').trim(),
   ].join('\n');
   copyStatus.textContent = '';
@@ -71,11 +87,11 @@ document.querySelectorAll('.close-dialog').forEach((button) => {
 document.querySelector('#copy-draft').addEventListener('click', async () => {
   try {
     await navigator.clipboard.writeText(output.value);
-    copyStatus.textContent = 'Luonnos kopioitu. Viestiä ei lähetetty.';
+    copyStatus.textContent = messages.copied;
   } catch {
     output.focus();
     output.select();
-    copyStatus.textContent = 'Kopiointi ei onnistunut automaattisesti. Teksti on valittu: kopioi se laitteen kopiointitoiminnolla.';
+    copyStatus.textContent = messages.copyFailed;
   }
 });
 
