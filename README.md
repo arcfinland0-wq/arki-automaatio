@@ -1,6 +1,6 @@
 # Arki Automaatio — service landing page
 
-A Finnish one-page service website. “Arki Automaatio” is a working name, not an established company identity. Plain HTML, CSS and browser JavaScript; no dependencies, build step, external fonts, analytics or requests to third-party services.
+A bilingual service website: Finnish at `/` and English at `/en/`, with visible language links on desktop and mobile. “Arki Automaatio” is a working name, not an established company identity. Plain HTML, CSS and browser JavaScript; no dependencies, build step, external fonts, analytics or requests to third-party services.
 
 ## Run locally
 
@@ -27,8 +27,9 @@ Confirm the business name and seller identity, provide the real contact destinat
 ## Contents
 
 - `index.html`: semantic Finnish content, prices, FAQ, contact draft dialog.
+- `en/index.html`: complete English page with the same prices and terms.
 - `styles.css`: responsive layout, focus states and reduced-motion support.
-- `app.js`: mobile navigation, package selection and contact draft preview/copy.
+- `app.js`: shared mobile navigation, package selection and contact draft preview/copy, localized from the document language.
 - `favicon.svg`: original working-name mark.
 
 Source pricing: supplied business plan and sales-message draft. Listed prices are VAT-exclusive; any applicable VAT and third-party costs are agreed in the quote. No hosting, domains, accounts or customer messages have been purchased or created.
