@@ -1,6 +1,6 @@
 # Arki Automaatio — service landing page
 
-A bilingual service website: Finnish at `/` and English at `/en/`, with visible language links on desktop and mobile. “Arki Automaatio” is a working name, not an established company identity. Plain HTML, CSS and browser JavaScript; no dependencies, build step, external fonts, analytics or requests to third-party services.
+A bilingual service website: Finnish at `/` and English at `/en/`, with visible language links on desktop and mobile. Plain HTML, CSS and browser JavaScript; no dependencies, build step, external fonts, analytics or requests to third-party services.
 
 ## Run locally
 
@@ -18,7 +18,7 @@ This dependency-free site also works at a GitHub Pages project URL: all asset re
 
 ## Contact form
 
-The form validates required fields and an email address, then opens a local, copyable draft. It never sends a message or stores personal data. Package buttons preselect the matching topic. The preview notice is deliberately explicit: no real address has been supplied. The draft uses text values, not HTML injection. Clipboard denial falls back to selecting the draft for manual copying.
+The form validates required fields and an email address, then opens a local, copyable draft. It never sends a message or stores personal data. Package buttons preselect the matching topic. Visitors can copy the draft and send it themselves to the owner-provided `labs@ayraslabs.com`; direct `mailto:` links also work without JavaScript. The draft uses text values, not HTML injection. Clipboard denial falls back to selecting the draft for manual copying.
 
 ## Before accepting real enquiries
 
