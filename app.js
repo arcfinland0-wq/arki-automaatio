@@ -26,6 +26,10 @@ document.addEventListener('keydown', (event) => {
 // when JavaScript is disabled or the script cannot be loaded.
 document.documentElement.classList.add('navigation-ready');
 
+const form = document.querySelector('#contact-form');
+
+// Search landing pages share the navigation but have no contact draft form.
+if (form) {
 const packageSelect = document.querySelector('#package');
 const packageSelection = document.querySelector('#package-selection');
 
@@ -43,7 +47,6 @@ document.querySelectorAll('[data-package]').forEach((link) => {
   });
 });
 
-const form = document.querySelector('#contact-form');
 const dialog = document.querySelector('#draft-dialog');
 const output = document.querySelector('#draft-output');
 const copyStatus = document.querySelector('#copy-status');
@@ -113,3 +116,4 @@ document.querySelector('#copy-draft').addEventListener('click', async () => {
 // Without the draft handler, keep all fields disabled so native form submission
 // cannot put contact details in a URL or send them to the static host.
 document.querySelector('#contact-fields').disabled = false;
+}

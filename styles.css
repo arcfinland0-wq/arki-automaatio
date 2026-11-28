@@ -246,3 +246,22 @@ dialog h2 { font-size: clamp(1.5rem, calc(1.25rem + 1vw), 2.25rem); margin-block
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* Search landing pages and their footer links. */
+.breadcrumbs { padding-top: 1.25rem; font-size: .875rem; color: var(--text-muted); overflow-wrap: anywhere; }
+.breadcrumbs a { text-decoration: underline; text-underline-offset: .2em; }
+.landing-hero { padding-block: clamp(2rem, 6vw, 5rem); max-width: 82rem; }
+.landing-hero h1 { margin-top: 1.25rem; margin-bottom: 1.5rem; max-width: 48rem; }
+.landing-hero .hero-description { max-width: 44rem; }
+.landing-prices { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 1rem; }
+.landing-prices li { min-width: 0; display: flex; flex-direction: column; gap: .5rem; padding: 1.25rem; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); overflow-wrap: anywhere; }
+.landing-prices strong { font-weight: 500; }
+.landing-prices span { font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2rem); letter-spacing: -.03em; line-height: 1.3; }
+.pricing-note .text-link { min-height: 0; font-size: inherit; }
+.landing-cta > p { max-width: 36rem; margin-top: 1rem; color: var(--text-muted); }
+.related-heading { margin-top: 3rem; }
+.related-links, .footer-links ul { list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+.related-links a { display: inline-flex; align-items: center; gap: .5rem; min-height: 2.75rem; text-decoration: underline; text-underline-offset: .2em; }
+.footer-links { flex: 1 1 100%; order: 5; font-size: .875rem; color: var(--text-muted); }
+.footer-links ul { margin-top: .25rem; }
+.footer-links a { display: inline-flex; align-items: center; min-height: 2.75rem; text-decoration: underline; text-underline-offset: .2em; }

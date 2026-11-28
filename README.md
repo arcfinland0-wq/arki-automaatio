@@ -16,6 +16,10 @@ Open `http://localhost:4173/` or the authenticated Devin browser preview for por
 
 This dependency-free site also works at a GitHub Pages project URL: all asset references are relative. After the site PR is reviewed and merged, enable **Settings → Pages → Deploy from a branch → main / (root)**. `.nojekyll` disables Jekyll processing. The owner supplied the existing domain `ayraslabs.com`; `CNAME` preserves that custom domain. Set the apex A records to `185.199.108.153`, `185.199.109.153`, `185.199.110.153` and `185.199.111.153`, and `www` CNAME to `arcfinland0-wq.github.io`. Enforce HTTPS once GitHub issues the certificate. No domain purchase or paid hosting is needed. Publishing was approved by the owner; the contact form deliberately remains a draft-only placeholder.
 
+## Search landing pages
+
+Five Finnish landing pages target local searches such as "automaatio pienyritykselle Helsinki": `automaatio-pienyritykselle-helsinki/`, `tekoalyautomaatio-yritykselle-helsinki/`, `ajanvarausten-automaatio-helsinki/`, `tilitoimiston-automaatio-helsinki/` and `verkkokaupan-automaatio-helsinki/`. Each has its own title, description, canonical URL and schema.org `Service`/`FAQPage` data, repeats the main page's prices, and sends visitors to the main contact section. `sitemap.xml` and `robots.txt` list every page; submit the sitemap in Google Search Console once the domain is verified there. Add any new page to the sitemap and to the footer links in `index.html` and `en/index.html`.
+
 ## Contact form
 
 The form validates required fields and an email address, then opens a local, copyable draft. It never sends a message or stores personal data. Package buttons preselect the matching topic. Visitors can copy the draft and send it themselves to the owner-provided `labs@ayraslabs.com`; direct `mailto:` links also work without JavaScript. The draft uses text values, not HTML injection. Clipboard denial falls back to selecting the draft for manual copying.
@@ -30,6 +34,8 @@ Confirm the business name and seller identity, provide the real contact destinat
 - `en/index.html`: complete English page with the same prices and terms.
 - `styles.css`: responsive layout, focus states and reduced-motion support.
 - `app.js`: shared mobile navigation, package selection and contact draft preview/copy, localized from the document language.
+- `*-helsinki/index.html`: Finnish search landing pages.
+- `sitemap.xml`, `robots.txt`: crawler files for the custom domain.
 - `favicon.svg`: original working-name mark.
 
 Source pricing: supplied business plan and sales-message draft. Listed prices are VAT-exclusive; any applicable VAT and third-party costs are agreed in the quote. No hosting, domains, accounts or customer messages have been purchased or created.
