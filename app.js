@@ -22,9 +22,24 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+// Only collapse navigation after its controls work; static links remain usable
+// when JavaScript is disabled or the script cannot be loaded.
+document.documentElement.classList.add('navigation-ready');
+
+const packageSelect = document.querySelector('#package');
+const packageSelection = document.querySelector('#package-selection');
+
+function updatePackageSelection() {
+  packageSelection.textContent = packageSelect.value;
+}
+
+packageSelect.addEventListener('change', updatePackageSelection);
+updatePackageSelection();
+
 document.querySelectorAll('[data-package]').forEach((link) => {
   link.addEventListener('click', () => {
-    document.querySelector('#package').value = link.dataset.package;
+    packageSelect.value = link.dataset.package;
+    updatePackageSelection();
   });
 });
 
