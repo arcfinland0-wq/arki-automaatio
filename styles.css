@@ -191,6 +191,7 @@ details > p { color: var(--text-muted); padding-bottom: 1.5rem; overflow-wrap: a
 .preview-notice strong { font-weight: 500; color: var(--text); }
 .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 0 1rem; }
 .field { min-width: 0; margin-bottom: 1.25rem; }
+.package-selection { display: block; margin-top: .5rem; color: var(--text-muted); font-size: .9375rem; overflow-wrap: anywhere; }
 label { display: block; font-size: .9375rem; margin-bottom: .5rem; }
 label > span { color: var(--text-muted); font-size: .875rem; }
 /* Never shrink form controls below 1rem at tablet/desktop breakpoints. */

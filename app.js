@@ -22,9 +22,20 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+const packageSelect = document.querySelector('#package');
+const packageSelection = document.querySelector('#package-selection');
+
+function updatePackageSelection() {
+  packageSelection.textContent = packageSelect.value;
+}
+
+packageSelect.addEventListener('change', updatePackageSelection);
+updatePackageSelection();
+
 document.querySelectorAll('[data-package]').forEach((link) => {
   link.addEventListener('click', () => {
-    document.querySelector('#package').value = link.dataset.package;
+    packageSelect.value = link.dataset.package;
+    updatePackageSelection();
   });
 });
 
