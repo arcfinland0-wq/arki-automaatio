@@ -67,14 +67,16 @@ h1, h2, h3 { font-weight: 400; overflow-wrap: anywhere; hyphens: auto; }
 .language-switch a { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; min-width: 2.75rem; padding: .25rem; border-radius: .25rem; }
 .language-switch a[aria-current] { background: var(--soft); text-decoration: underline; text-underline-offset: .25em; }
 .language-switch a:hover { background: var(--accent); }
-.menu-toggle { display: inline-flex; align-items: center; justify-content: center; gap: .75rem; min-width: 2.75rem; min-height: 2.75rem; padding: .5rem; background: none; color: var(--text); font-size: 1rem; }
+.menu-toggle { display: none; align-items: center; justify-content: center; gap: .75rem; min-width: 2.75rem; min-height: 2.75rem; padding: .5rem; background: none; color: var(--text); font-size: 1rem; }
+.navigation-ready .menu-toggle { display: inline-flex; }
 .menu-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .menu-icon { display: block; position: relative; width: 20px; height: 20px; flex-shrink: 0; }
 .menu-icon::before, .menu-icon::after { content: ""; position: absolute; left: 1px; top: 9px; width: 18px; height: 0; border-top: 2px solid currentColor; }
 .menu-icon::after { transform: rotate(90deg); }
 .menu-toggle[aria-expanded="true"] .menu-icon { transform: rotate(45deg); }
-#navigation { display: none; position: absolute; z-index: 3; top: 100%; inset-inline: 0; max-height: 70vh; overflow-y: auto; padding: 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 0 0 var(--radius) var(--radius); box-shadow: 0 .625rem 1rem var(--shadow); font-size: 1rem; }
-#navigation.is-open { display: flex; flex-direction: column; }
+#navigation { display: flex; flex: 1 1 100%; min-width: 0; flex-direction: column; font-size: 1rem; }
+.navigation-ready #navigation { display: none; position: absolute; z-index: 3; top: 100%; inset-inline: 0; max-height: 70vh; overflow-y: auto; padding: 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 0 0 var(--radius) var(--radius); box-shadow: 0 .625rem 1rem var(--shadow); }
+.navigation-ready #navigation.is-open { display: flex; }
 #navigation > a:not(.button) { display: flex; align-items: center; min-height: 2.75rem; padding-block: .625rem; }
 #navigation a:not(.button):hover { text-decoration: underline; text-underline-offset: .25em; }
 #navigation .button { margin-top: .5rem; }
@@ -234,8 +236,8 @@ dialog h2 { font-size: clamp(1.5rem, calc(1.25rem + 1vw), 2.25rem); margin-block
   .contact-section { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 3rem; }
 }
 @media (min-width: 72em) {
-  .menu-toggle { display: none; }
-  #navigation, #navigation.is-open { display: flex; position: static; flex: 1 1 34rem; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: .5rem 1.5rem; max-height: none; overflow: visible; padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; }
+  .navigation-ready .menu-toggle { display: none; }
+  #navigation, .navigation-ready #navigation { display: flex; position: static; flex: 1 1 34rem; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: .5rem 1.5rem; max-height: none; overflow: visible; padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; }
   #navigation .button { margin-top: 0; }
   .reference-offer { grid-template-columns: auto minmax(0, 1fr) auto; }
   .reference-offer > a { grid-column: auto; }
